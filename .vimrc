@@ -8,6 +8,7 @@ set tabstop=2                               " short ts
 set softtabstop=2                           " short sts
 set shiftwidth=2                            " short sw
 set scrolloff=999                           " short so
+set scrollbind                              " short scb
 color elflord
 " Sets status line
 set laststatus=2
