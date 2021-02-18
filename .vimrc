@@ -67,3 +67,13 @@ if isdirectory($HOME . '/.vim/undo') == 0
 endif
 set undodir+=~/.vim/undo//
 set undofile
+" viminfo stores the state of the previous editing session
+set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo
+"           | |    |   |   |    | |  + viminfo file path
+"           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |    |   |   |    + disable 'hlsearch' loading viminfo
+"           | |    |   |   + comand line history saved
+"           | |    |   + search history saved
+"           | |    + files marks saved
+"           | + lines saved each register
+"           + save/restore buffer list
