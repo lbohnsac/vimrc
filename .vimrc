@@ -51,8 +51,19 @@ highlight CursorColumn ctermbg=234
 " Remove all trailing whitespaces while saving
 autocmd BufWritePre * %s/\s\+$//e
 " keep swap files out of the way (dir has to exist!)
-silent !mkdir ~/.vim/swap > /dev/null 2>&1
+if isdirectory($HOME . '/.vim/swap') == 0
+  call mkdir($HOME . '/.vim/swap', 'p')
+endif
 set directory=~/.vim/swap//
 " keep backup files out of the way (dir has to exist!)
-silent !mkdir ~/.vim/backup > /dev/null 2>&1
+if isdirectory($HOME . '/.vim/backup') == 0
+  call mkdir($HOME . '/.vim/backup', 'p')
+endif
 set backupdir=~/.vim/backup
+set backup
+" use undos even after exits and restarts
+if isdirectory($HOME . '/.vim/undo') == 0
+  call mkdir($HOME . '/.vim/undo', 'p')
+endif
+set undodir+=~/.vim/undo//
+set undofile
