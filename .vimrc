@@ -1,5 +1,6 @@
 set ruler                                   " short ru
 set list
+set paste
 set cmdheight=1
 set number                                  " short nu
 set autoindent                              " short ai
