@@ -78,3 +78,13 @@ set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo
 "           | |    + files marks saved
 "           | + lines saved each register
 "           + save/restore buffer list
+" Tabs
+" Tab key mappings
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+" Tab settings
+set showtabline=1                         " short stal
+" TabLine settings
+hi TabLine cterm=bold ctermfg=46 ctermbg=242
+hi TabLineSel cterm=bold ctermfg=46
+hi TabLineFill cterm=bold ctermbg=46
