@@ -43,6 +43,10 @@ autocmd FileType yaml setlocal cursorcolumn                             " short 
 highlight CursorColumn ctermbg=234
 " Remove all trailing whitespaces while saving
 autocmd BufWritePre * %s/\s\+$//e
+" take care that dir ~/.vim is existing
+if isdirectory($HOME . '/.vim') == 0
+  call mkdir($HOME . '/.vim', 'p')
+endif
 " keep swap files out of the way (dir has to exist!)
 if isdirectory($HOME . '/.vim/swap') == 0
   call mkdir($HOME . '/.vim/swap', 'p')
@@ -52,7 +56,6 @@ set directory=~/.vim/swap//
 if isdirectory($HOME . '/.vim/backup') == 0
   call mkdir($HOME . '/.vim/backup', 'p')
 endif
-" Where to store backups
 set backupdir=~/.vim/backup//
 " Turn on backup option
 set backup
