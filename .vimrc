@@ -21,6 +21,7 @@ color elflord
 set laststatus=2
 set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-14.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
 highlight StatusLine ctermbg=black ctermfg=46
+autocmd InsertEnter * hi StatusLine term=reverse ctermbg=Yellow  ctermfg=DarkBlue
 " Enables cursor line position tracking
 set cursorline                              " short cul
 " Removes the underline causes by enabling cursorline:
