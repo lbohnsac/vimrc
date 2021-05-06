@@ -29,7 +29,7 @@ highlight clear CursorLine
 highlight LineNr ctermfg=8
 " Sets the current line number colour
 highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=46
-" Sets the background colour of the curtrent line
+" Sets the background colour of the current line
 highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE
 " Sets the list chars
 " shift+ctrl+u + 00ac + space ¬
@@ -56,7 +56,7 @@ endif
 set backupdir=~/.vim/backup//
 " Turn on backup option
 set backup
-" Make backup efore overwriting the current buffer
+" Make backup before overwriting the current buffer
 set writebackup
 " Overwrite the original backup file
 set backupcopy=yes
