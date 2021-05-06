@@ -96,3 +96,9 @@ if executable('jq')
 endif
 " Toggle set number and set list
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>
+" Window key mappings
+nnoremap wt <C-W>T
+nnoremap <A-Left> <C-W>h
+nnoremap <A-Down> <C-W>j
+nnoremap <A-Up> <C-W>k
+nnoremap <A-Right> <C-W>l
