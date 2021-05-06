@@ -1,6 +1,7 @@
 set nocompatible                                                        " short nocp
 set showmode                                                            " short smd
 set ruler                                                               " short ru
+set rulerformat=%c%V\ %p
 set list
 set paste
 set cmdheight=1
@@ -18,19 +19,8 @@ set fileencoding=utf-8
 color elflord
 " Sets status line
 set laststatus=2
-set statusline= 
-set statusline+=%F
-set statusline+= 
-set statusline+=%r
-set statusline+= 
-set statusline+=%m
-set statusline+= 
-set statusline+=%{&endofline?'':'[noeol]'}
-set statusline+= 
-set statusline+=%y
-set statusline+= 
-set statusline+=%{strlen(&fenc)?&fenc:'none'}
-set statusline+= 
+set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-14.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
+highlight StatusLine ctermbg=black ctermfg=46
 " Enables cursor line position tracking
 set cursorline                              " short cul
 " Removes the underline causes by enabling cursorline:
@@ -48,7 +38,7 @@ highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE
 " shift+ctrl+u + 00b7 + space ·
 set listchars=eol:¬,tab:‣ ,trail:·
 " Add the cursorcolumn for YAML files
-autocmd FileType yaml setlocal cursorcolumn " short cuc
+autocmd FileType yaml setlocal cursorcolumn                             " short cuc
 " Sets the cursorcolumn line colour -> switch on with -> :se cuc
 highlight CursorColumn ctermbg=234
 " Remove all trailing whitespaces while saving
