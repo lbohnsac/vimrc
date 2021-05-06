@@ -1,14 +1,15 @@
-set ruler                                   " short ru
+set showmode                                                            " short smd
+set ruler                                                               " short ru
 set list
 set paste
 set cmdheight=1
-set number                                  " short nu
-set autoindent                              " short ai
-set expandtab                               " short et
-set tabstop=2                               " short ts
-set softtabstop=2                           " short sts
-set shiftwidth=2                            " short sw
-set scrolloff=999                           " short so
+set number                                                              " short nu
+set autoindent                                                          " short ai
+set expandtab                                                           " short et
+set tabstop=2                                                           " short ts
+set softtabstop=2                                                       " short sts
+set shiftwidth=2                                                        " short sw
+set scrolloff=999                                                       " short so
 " The encoding displayed
 set encoding=utf-8
 " The encoding written to file
@@ -83,8 +84,8 @@ set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 " Tab settings
-set showtabline=1                         " short stal
+set showtabline=1                                                       " short stal
 " TabLine settings
-hi TabLine cterm=bold ctermfg=46 ctermbg=242
-hi TabLineSel cterm=bold ctermfg=46
-hi TabLineFill cterm=bold ctermbg=46
+highlight TabLine cterm=bold ctermfg=46 ctermbg=242                     " short hi
+highlight TabLineSel cterm=bold ctermfg=46
+highlight TabLineFill cterm=bold ctermbg=46
