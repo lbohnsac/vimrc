@@ -1,7 +1,5 @@
 set nocompatible                                                        " short nocp
 set showmode                                                            " short smd
-set ruler                                                               " short ru
-set rulerformat=%c%V\ %p
 set list
 set paste
 set cmdheight=1
