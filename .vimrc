@@ -88,3 +88,9 @@ set showtabline=1                                                       " short 
 highlight TabLine cterm=bold ctermfg=46 ctermbg=242                     " short hi
 highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
+" jq mappings
+nnoremap jq <ESC>:%!python3 -m json.tool<CR>
+if executable('jq')
+  nnoremap jq <ESC>:%!jq '.'<CR>
+  nnoremap jc <ESC>:%!jq -c<CR>
+endif
