@@ -94,3 +94,5 @@ if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
   nnoremap jc <ESC>:%!jq -c<CR>
 endif
+" Toggle set number and set list
+nnoremap cp <ESC>:set nu! <BAR> set list!<CR>
