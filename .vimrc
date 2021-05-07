@@ -90,7 +90,15 @@ highlight TabLine cterm=bold ctermfg=46 ctermbg=242                     " short 
 highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
 " jq mappings
-nnoremap jq <ESC>:%!python3 -m json.tool<CR>
+if executable('python')
+  nnoremap jq <ESC>:%!python -m json.tool<CR>
+endif
+if executable('python2')
+  nnoremap jq <ESC>:%!python2 -m json.tool<CR>
+endif
+if executable('python3')
+  nnoremap jq <ESC>:%!python3 -m json.tool<CR>
+endif
 if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
   nnoremap jc <ESC>:%!jq -c<CR>
