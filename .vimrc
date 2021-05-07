@@ -105,6 +105,8 @@ if executable('jq')
 endif
 " Toggle set number and set list
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>
+" Toggle set relativenumber
+nnoremap nr <ESC>:set relativenumber!<CR>                               " short rnu; nornu
 " Window key mappings
 nnoremap wt <C-W>T
 nnoremap <A-Left> <C-W>h
