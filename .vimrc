@@ -66,7 +66,7 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
 if isdirectory($HOME . '/.vim/undo') == 0
   call mkdir($HOME . '/.vim/undo', 'p')
 endif
-set undodir+=~/.vim/undo//
+set undodir=~/.vim/undo//
 set undofile
 " viminfo stores the state of the previous editing session
 set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo
