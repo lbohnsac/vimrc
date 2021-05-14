@@ -109,10 +109,10 @@ nnoremap cp <ESC>:set nu! <BAR> set list!<CR>
 nnoremap nr <ESC>:set relativenumber!<CR>                               " short rnu; nornu
 " Window key mappings
 nnoremap wt <C-W>T
-nnoremap <A-Left> <C-W>h
-nnoremap <A-Down> <C-W>j
-nnoremap <A-Up> <C-W>k
-nnoremap <A-Right> <C-W>l
+nnoremap <A-Left> :wincmd k                                             "<C-W>h
+nnoremap <A-Down> :wincmd j                                             "<C-W>j
+nnoremap <A-Up> :wincmd k                                               "<C-W>k
+nnoremap <A-Right> :wincmd l                                            "<C-W>l
 
 " AUTOCOMMANDGROUPS
 augroup vimrc-auto-mkdir
