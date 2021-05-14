@@ -10,66 +10,69 @@ set tabstop=2                                                           " short 
 set softtabstop=2                                                       " short sts
 set shiftwidth=2                                                        " short sw
 set scrolloff=999                                                       " short so
-" The encoding displayed
-set encoding=utf-8
-" The encoding written to file
-set fileencoding=utf-8
-color elflord
-" Sets status line
-set laststatus=2
-set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-14.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
+set encoding=utf-8                                                      " The encoding displayed
+set fileencoding=utf-8                                                  " The encoding written to file
+color elflord " Use color scheme
+
+" STATUSLINE
+set laststatus=2                                                        " Sets status line
+set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
 highlight StatusLine ctermbg=black ctermfg=46
-autocmd InsertEnter * hi StatusLine term=reverse ctermbg=Yellow  ctermfg=DarkBlue
+autocmd InsertEnter * hi StatusLine term=bold ctermbg=Yellow ctermfg=DarkBlue
 autocmd InsertLeave * hi StatusLine ctermbg=black ctermfg=46
+
 " Enables cursor line position tracking
-set cursorline                              " short cul
-" Removes the underline causes by enabling cursorline:
-highlight clear CursorLine
-" Sets the line numbering colour
-highlight LineNr ctermfg=8
-" Sets the current line number colour
-highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=46
-" Sets the background colour of the current line
-highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE
+set cursorline                                                          " short cul
+highlight clear CursorLine                                              " Removes the underline causes by enabling cursorline:
+highlight LineNr ctermfg=8                                              " Sets the line numbering colour
+highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=46               " Sets the current line number colour
+highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE                  " Sets the background colour of the curtrent line
+
 " Sets the list chars
 " shift+ctrl+u + 00ac + space ¬
 " shift+ctrl+u + 2023 + space ‣
 " shift+ctrl+u + 00a0 + space  
 " shift+ctrl+u + 00b7 + space ·
 set listchars=eol:¬,tab:‣ ,trail:·
+
 " Add the cursorcolumn for YAML files
 autocmd FileType yaml setlocal cursorcolumn                             " short cuc
+
 " Sets the cursorcolumn line colour -> switch on with -> :se cuc
 highlight CursorColumn ctermbg=234
-" Remove all trailing whitespaces while saving
-autocmd BufWritePre * %s/\s\+$//e
-" keep swap files out of the way (dir has to exist!)
-if isdirectory($HOME . '/.vim/swap') == 0
+
+
+" CONFIG DIRECTORY SETUP
+if isdirectory($HOME . '/.vim') == 0                                    " take care that dir ~/.vim is existing
+  call mkdir($HOME . '/.vim', 'p')
+endif
+
+" SWAP
+if isdirectory($HOME . '/.vim/swap') == 0                               " keep swap files out of the way (dir has to exist!)
   call mkdir($HOME . '/.vim/swap', 'p')
 endif
-set directory=~/.vim/swap//
-" keep backup files out of the way (dir has to exist!)
-if isdirectory($HOME . '/.vim/backup') == 0
+set directory=~/.vim/swap//                                             " Where to store swaofiles
+
+" BACKUP
+if isdirectory($HOME . '/.vim/backup') == 0                             " keep backup files out of the way (dir has to exist!)
   call mkdir($HOME . '/.vim/backup', 'p')
 endif
-" Where to store backups
-set backupdir=~/.vim/backup//
-" Turn on backup option
-set backup
-" Make backup before overwriting the current buffer
-set writebackup
-" Overwrite the original backup file
-set backupcopy=yes
+set backupdir=~/.vim/backup//                                           " Where to store backups
+set backup                                                              " Turn on backup option
+set writebackup                                                         " Make backup efore overwriting the current buffer
+set backupcopy=yes                                                      " Overwrite the original backup file
+
 " Usefull backup file name e.g filename@2021-05-06.12:03
 au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
-" use undos even after exits and restarts
-if isdirectory($HOME . '/.vim/undo') == 0
+
+" UNDO
+if isdirectory($HOME . '/.vim/undo') == 0                               " use undos even after exits and restarts
   call mkdir($HOME . '/.vim/undo', 'p')
 endif
-set undodir=~/.vim/undo//
-set undofile
-" viminfo stores the state of the previous editing session
-set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo
+set undodir=~/.vim/undo//                                               " Where to store undos
+set undofile                                                            " Turn on undo option
+
+set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo                    " viminfo stores the state of the previous editing session
 "           - ---- --- --- ---- - -- ---------------
 "           | |    |   |   |    | |  + viminfo file path
 "           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
@@ -79,17 +82,32 @@ set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo
 "           | |    + files marks saved
 "           | + lines saved each register
 "           + save/restore buffer list
-" Tabs
+
+" TABS
+" Tab settings
+set showtabline=1                                                       " short stal
+set tabpagemax=20                                                       " short tpm; default is 10
+
+" TabLine settings
+highlight TabLine cterm=bold ctermfg=46 ctermbg=242
+highlight TabLineSel cterm=bold ctermfg=46
+highlight TabLineFill cterm=bold ctermbg=46
+
+" KEY MAPPINGS
 " Tab key mappings
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
-" Tab settings
-set showtabline=1                                                       " short stal
-" TabLine settings
-highlight TabLine cterm=bold ctermfg=46 ctermbg=242                     " short hi
-highlight TabLineSel cterm=bold ctermfg=46
-highlight TabLineFill cterm=bold ctermbg=46
-" jq mappings
+nnoremap <C-up> :tabnew<CR>
+nnoremap <C-down> :tabclose<CR>
+
+" Window key mappings
+nnoremap wt <C-W>T
+nnoremap <A-Left> :wincmd k                                             "<C-W>h
+nnoremap <A-Down> :wincmd j                                             "<C-W>j
+nnoremap <A-Up> :wincmd k                                               "<C-W>k
+nnoremap <A-Right> :wincmd l                                            "<C-W>l
+
+" jq key mappings
 if executable('python')
   nnoremap jq <ESC>:%!python -m json.tool<CR>
 endif
@@ -101,18 +119,15 @@ if executable('python3')
 endif
 if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
-  nnoremap jc <ESC>:%!jq -c<CR>
+  nnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
-" Toggle set number and set list
-nnoremap cp <ESC>:set nu! <BAR> set list!<CR>
-" Toggle set relativenumber
-nnoremap nr <ESC>:set relativenumber!<CR>                               " short rnu; nornu
-" Window key mappings
-nnoremap wt <C-W>T
-nnoremap <A-Left> :wincmd k                                             "<C-W>h
-nnoremap <A-Down> :wincmd j                                             "<C-W>j
-nnoremap <A-Up> :wincmd k                                               "<C-W>k
-nnoremap <A-Right> :wincmd l                                            "<C-W>l
+
+" Toggle mappings
+nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                           " Toggle set number and set list
+nnoremap nr <ESC>:set relativenumber!<CR>                               " Toggle set relativenumber
+
+" AUTOCOMMANDS
+autocmd BufWritePre * %s/\s\+$//e                                       " Remove all trailing whitespaces while saving
 
 " AUTOCOMMANDGROUPS
 augroup vimrc-auto-mkdir
