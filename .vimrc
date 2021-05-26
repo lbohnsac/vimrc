@@ -18,6 +18,8 @@ color elflord " Use color scheme
 set laststatus=2                                                        " Sets status line
 set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
 highlight StatusLine ctermbg=black ctermfg=46
+highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
+highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
 autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=33
 autocmd InsertLeave * hi StatusLine ctermbg=black ctermfg=46
 
