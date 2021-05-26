@@ -18,7 +18,7 @@ color elflord " Use color scheme
 set laststatus=2                                                        " Sets status line
 set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
 highlight StatusLine ctermbg=black ctermfg=46
-autocmd InsertEnter * hi StatusLine term=bold ctermbg=Yellow ctermfg=DarkBlue
+autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=33
 autocmd InsertLeave * hi StatusLine ctermbg=black ctermfg=46
 
 " Enables cursor line position tracking
