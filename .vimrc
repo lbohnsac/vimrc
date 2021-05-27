@@ -1,4 +1,5 @@
 set nocompatible                                                        " short nocp
+set modeline
 set showmode                                                            " short smd
 set list
 set paste
@@ -17,11 +18,11 @@ color elflord " Use color scheme
 " STATUSLINE
 set laststatus=2                                                        " Sets status line
 set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
-highlight StatusLine ctermbg=black ctermfg=46
+highlight StatusLine term=bold ctermbg=black ctermfg=46
 highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
 autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=33
-autocmd InsertLeave * hi StatusLine ctermbg=black ctermfg=46
+autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46
 
 " Enables cursor line position tracking
 set cursorline                                                          " short cul
@@ -44,6 +45,9 @@ autocmd FileType yaml setlocal cursorcolumn                             " short 
 highlight CursorColumn ctermbg=234
 
 " Italicized comments
+" When used in tmux set
+" set -g default-terminal "tmux-256color"
+" in .tmux.conf
 highlight Comment cterm=italic
 
 " CONFIG DIRECTORY SETUP
@@ -55,7 +59,7 @@ endif
 if isdirectory($HOME . '/.vim/swap') == 0                               " keep swap files out of the way (dir has to exist!)
   call mkdir($HOME . '/.vim/swap', 'p')
 endif
-set directory=~/.vim/swap//                                             " Where to store swaofiles
+set directory=~/.vim/swap//                                             " Where to store swapfiles
 
 " BACKUP
 if isdirectory($HOME . '/.vim/backup') == 0                             " keep backup files out of the way (dir has to exist!)
