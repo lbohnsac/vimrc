@@ -43,6 +43,8 @@ autocmd FileType yaml setlocal cursorcolumn                             " short 
 " Sets the cursorcolumn line colour -> switch on with -> :se cuc
 highlight CursorColumn ctermbg=234
 
+" Italicized comments
+highlight Comment cterm=italic
 
 " CONFIG DIRECTORY SETUP
 if isdirectory($HOME . '/.vim') == 0                                    " take care that dir ~/.vim is existing
