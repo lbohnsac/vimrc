@@ -1,6 +1,7 @@
 set nocompatible                                                        " short nocp
 set modeline
 set showmode                                                            " short smd
+set showcmd                                                             " short sc
 set list
 set paste
 set cmdheight=1
@@ -14,6 +15,9 @@ set scrolloff=999                                                       " short 
 set encoding=utf-8                                                      " The encoding displayed
 set fileencoding=utf-8                                                  " The encoding written to file
 color elflord                                                           " Use color scheme
+
+
+
 
 " Puts new split windows to the bottom of the current.
 set splitbelow                                                          " short sb
@@ -117,10 +121,10 @@ nnoremap <C-down> :tabclose<CR>
 
 " Window key mappings
 nnoremap wt <C-W>T
-nnoremap <A-Left> :wincmd k                                             "<C-W>h
-nnoremap <A-Down> :wincmd j                                             "<C-W>j
-nnoremap <A-Up> :wincmd k                                               "<C-W>k
-nnoremap <A-Right> :wincmd l                                            "<C-W>l
+nnoremap <A-Left> :wincmd h<CR>                                         "<C-W>h
+nnoremap <A-Down> :wincmd j<CR>                                         "<C-W>j
+nnoremap <A-Up> :wincmd k<CR>                                           "<C-W>k
+nnoremap <A-Right> :wincmd l<CR>                                        "<C-W>l
 
 " jq key mappings
 if executable('python')
