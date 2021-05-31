@@ -13,7 +13,10 @@ set shiftwidth=2                                                        " short 
 set scrolloff=999                                                       " short so
 set encoding=utf-8                                                      " The encoding displayed
 set fileencoding=utf-8                                                  " The encoding written to file
-color elflord " Use color scheme
+color elflord                                                           " Use color scheme
+
+" Puts new split windows to the bottom of the current.
+set splitbelow                                                          " short sb
 
 " STATUSLINE
 set laststatus=2                                                        " Sets status line
