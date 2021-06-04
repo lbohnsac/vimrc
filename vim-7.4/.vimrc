@@ -121,6 +121,9 @@ nnoremap <A-Down> :wincmd j<CR>                                         "<C-W>j
 nnoremap <A-Up> :wincmd k<CR>                                           "<C-W>k
 nnoremap <A-Right> :wincmd l<CR>                                        "<C-W>l
 
+" Edit existing file under cursor in vertically split window
+nnoremap <C-W><C-F> <C-W>vgf
+
 " jq key mappings
 if executable('python')
   nnoremap jq <ESC>:%!python -m json.tool<CR>
