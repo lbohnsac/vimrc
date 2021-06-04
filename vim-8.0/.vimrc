@@ -5,6 +5,7 @@ set showcmd                                                             " short 
 set list
 set paste
 set cmdheight=1
+set cryptmethod=blowfish2                                               " short cm
 set number                                                              " short nu
 set autoindent                                                          " short ai
 set expandtab                                                           " short et
