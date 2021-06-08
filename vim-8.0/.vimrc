@@ -94,6 +94,10 @@ endif
 set undodir=~/.vim/undo//                                               " Where to store undos
 set undofile                                                            " Turn on undo option
 
+if isdirectory($HOME . '/.vim/view') == 0                               " create the view dir
+  call mkdir($HOME . '/.vim/view', 'p')
+endif
+
 set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo                    " viminfo stores the state of the previous editing session
 "           - ---- --- --- ---- - -- ---------------
 "           | |    |   |   |    | |  + viminfo file path
