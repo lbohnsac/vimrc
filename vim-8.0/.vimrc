@@ -1,5 +1,6 @@
 set nocompatible                                                        " short nocp
 set nomodeline                                                          " short noml
+set title
 set showmode                                                            " short smd
 set showcmd                                                             " short sc
 set list
