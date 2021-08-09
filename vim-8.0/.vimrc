@@ -1,3 +1,12 @@
+"            _
+"     _   __(_)___ ___  __________
+"    | | / / / __ `__ \/ ___/ ___/
+"   _| |/ / / / / / / / /  / /_
+"  (_)___/_/_/ /_/ /_/_/   \___/
+"
+" Lars Bohnsack
+" 2021-08-09
+
 set nocompatible                                                        " short nocp
 set nomodeline                                                          " short noml
 set title
