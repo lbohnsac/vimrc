@@ -151,6 +151,13 @@ if executable('jq')
   nnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
 
+" yq key mappings
+" https://github.com/mikefarah/yq/releases
+if executable('yq')
+  nnoremap yq <ESC>:%!yq e -j<CR>
+  nnoremap yc <ESC>:%!yq e -P<CR>
+endif
+
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                           " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                               " Toggle set relativenumber
