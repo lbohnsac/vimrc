@@ -1,3 +1,12 @@
+"            _
+"     _   __(_)___ ___  __________
+"    | | / / / __ `__ \/ ___/ ___/
+"   _| |/ / / / / / / / /  / /_
+"  (_)___/_/_/ /_/ /_/_/   \___/
+"
+" Lars Bohnsack
+" 2021-08-09
+
 set nocompatible                                                        " short nocp
 set modeline
 set showmode                                                            " short smd
@@ -137,6 +146,13 @@ endif
 if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
   nnoremap jc <ESC>:%!jq -c '.'<CR>
+endif
+
+" yq key mappings
+" https://github.com/mikefarah/yq/releases
+if executable('yq')
+  nnoremap yq <ESC>:%!yq e -j<CR>
+  nnoremap yc <ESC>:%!yq e -P<CR>
 endif
 
 " Toggle mappings
