@@ -132,6 +132,9 @@ highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
 
 " KEY MAPPINGS
+" Clear highlights on hitting ESC twice
+nnoremap <esc><esc> :noh<return>
+
 " Tab key mappings
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
