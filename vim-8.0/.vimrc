@@ -185,6 +185,8 @@ nnoremap nr <ESC>:set relativenumber!<CR>                               " Toggle
 autocmd BufWritePre * %s/\s\+$//e                                       " Remove all trailing whitespaces while saving
 
 " AUTOCOMMANDGROUPS
+" https://travisjeffery.com/b/2011/11/saving-files-in-nonexistent-directories-with-vim/
+" automatically mkdir when writing file in non-existant directory
 augroup vimrc-auto-mkdir
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
