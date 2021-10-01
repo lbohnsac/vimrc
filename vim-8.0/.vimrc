@@ -165,13 +165,16 @@ if executable('python3')
 endif
 if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
+  " json to yaml
   nnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
 
 " yq key mappings
 " https://github.com/mikefarah/yq/releases
 if executable('yq')
+  " yaml to json
   nnoremap yq <ESC>:%!yq e -j<CR>
+  " json to yaml
   nnoremap yc <ESC>:%!yq e -P<CR>
 endif
 
