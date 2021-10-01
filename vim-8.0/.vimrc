@@ -165,7 +165,6 @@ if executable('python3')
 endif
 if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
-  " json to yaml
   nnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
 
