@@ -183,3 +183,6 @@ augroup vimrc-auto-mkdir
     endif
   endfunction
 augroup END
+" NETRW SETTINGS
+" open netrw always with directory layout 3
+let g:netrw_liststyle = 3
