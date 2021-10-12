@@ -132,6 +132,11 @@ highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
 
 " KEY MAPPINGS
+" Allow saving of files as sudo when we forgot to start vim using sudo.                                                                                                                                            
+" If the 'paste' option is set, then command-line mode maps are disabled.                                                                                                                                          
+" run ':set paste!' before using ':w!!'                                                                                                                                                                            
+cnoremap w!! execute 'write !sudo tee % >/dev/null' <bar> edit!
+
 " Clear highlights on hitting ESC twice
 nnoremap <esc><esc> :noh<return>
 
@@ -166,7 +171,9 @@ endif
 " yq key mappings
 " https://github.com/mikefarah/yq/releases
 if executable('yq')
+  " yaml to json
   nnoremap yq <ESC>:%!yq e -j<CR>
+  " json to yaml
   nnoremap yc <ESC>:%!yq e -P<CR>
 endif
 
@@ -178,6 +185,8 @@ nnoremap nr <ESC>:set relativenumber!<CR>                               " Toggle
 autocmd BufWritePre * %s/\s\+$//e                                       " Remove all trailing whitespaces while saving
 
 " AUTOCOMMANDGROUPS
+" https://travisjeffery.com/b/2011/11/saving-files-in-nonexistent-directories-with-vim/
+" automatically mkdir when writing file in non-existant directory
 augroup vimrc-auto-mkdir
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
