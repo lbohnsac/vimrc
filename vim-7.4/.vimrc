@@ -186,3 +186,5 @@ augroup END
 " NETRW SETTINGS
 " open netrw always with directory layout 3
 let g:netrw_liststyle = 3
+" remove the banner
+let g:netrw_banner = 0
