@@ -117,6 +117,15 @@ highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
 
 " KEY MAPPINGS
+" Allow saving of files as sudo when we forgot to start vim using sudo.
+" If the 'paste' option is set, then command-line mode maps are disabled.
+" run ':set paste!' before using ':w!!'
+cnoremap w!! execute 'write !sudo tee % >/dev/null' <bar> edit!
+
+" Clear highlights on hitting ESC twice
+nnoremap <esc><esc> :noh<return>
+
+
 " Tab key mappings
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
