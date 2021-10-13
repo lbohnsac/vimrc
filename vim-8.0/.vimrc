@@ -172,10 +172,8 @@ endif
 " yq key mappings
 " https://github.com/mikefarah/yq/releases
 if executable('yq')
-  " yaml to json
-  nnoremap yq <ESC>:%!yq e -j<CR>
-  " json to yaml
-  nnoremap yc <ESC>:%!yq e -P<CR>
+  nnoremap yq <ESC>:%!yq e -j<CR>                                       " yaml to json
+  nnoremap yc <ESC>:%!yq e -P<CR>                                       " json to yaml
 endif
 
 " Toggle mappings
