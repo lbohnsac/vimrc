@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2021-08-09
+" 2021-10-13
 
 set nocompatible                                                        " short nocp
 set nomodeline                                                          " short noml
@@ -183,6 +183,9 @@ nnoremap nr <ESC>:set relativenumber!<CR>                               " Toggle
 
 " AUTOCOMMANDS
 autocmd BufWritePre * %s/\s\+$//e                                       " Remove all trailing whitespaces while saving
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+autocmd FileType netrw setl bufhidden=delete
 
 " AUTOCOMMANDGROUPS
 " https://travisjeffery.com/b/2011/11/saving-files-in-nonexistent-directories-with-vim/
