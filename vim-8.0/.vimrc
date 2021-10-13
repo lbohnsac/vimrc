@@ -25,6 +25,7 @@ set shiftwidth=2                                                        " short 
 set scrolloff=999                                                       " short so
 set encoding=utf-8                                                      " The encoding displayed
 set fileencoding=utf-8                                                  " The encoding written to file
+set wildmenu                                                            " short wmnu
 set spelllang=en,de_de
 color elflord                                                           " Use color scheme
 
