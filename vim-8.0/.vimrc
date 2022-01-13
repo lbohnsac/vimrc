@@ -26,12 +26,10 @@ set scrolloff=999                                                       " short 
 set encoding=utf-8                                                      " The encoding displayed
 set fileencoding=utf-8                                                  " The encoding written to file
 set wildmenu                                                            " short wmnu
+set equalalways                                                         " short ea
+set eadirection=both                                                    " short ead
 set spelllang=en,de_de
 color elflord                                                           " Use color scheme
-
-
-
-
 " Puts new split windows to the bottom of the current.
 set splitbelow                                                          " short sb
 
@@ -133,9 +131,9 @@ highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
 
 " KEY MAPPINGS
-" Allow saving of files as sudo when we forgot to start vim using sudo.                                                                                                                                            
-" If the 'paste' option is set, then command-line mode maps are disabled.                                                                                                                                          
-" run ':set paste!' before using ':w!!'                                                                                                                                                                            
+" Allow saving of files as sudo when we forgot to start vim using sudo.
+" If the 'paste' option is set, then command-line mode maps are disabled.
+" run ':set paste!' before using ':w!!'
 cnoremap w!! execute 'write !sudo tee % >/dev/null' <bar> edit!
 
 " Clear highlights on hitting ESC twice
