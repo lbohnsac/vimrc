@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2021-10-13
+" 2022-01-13
 
 set nocompatible                                                        " short nocp
 set nomodeline                                                          " short noml
@@ -139,7 +139,7 @@ highlight TabLineFill cterm=bold ctermbg=46
 cnoremap w!! execute 'write !sudo tee % >/dev/null' <bar> edit!
 
 " Clear highlights on hitting ESC twice
-nnoremap <esc><esc> :noh<return>
+nnoremap <esc><esc> :noh<CR>
 
 " Tab key mappings
 nnoremap <C-Left> :tabprevious<CR>
