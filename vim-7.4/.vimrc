@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2021-08-09
+" 2022-03-14
 
 set nocompatible                                                        " short nocp
 set modeline
@@ -47,6 +47,9 @@ highlight clear CursorLine                                              " Remove
 highlight LineNr ctermfg=8                                              " Sets the line numbering colour
 highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=46               " Sets the current line number colour
 highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE                  " Sets the background colour of the curtrent line
+
+" Define the background color for Visual mode highlighting
+hi Visual ctermbg=241
 
 " Pmenu config
 highlight Pmenu term=bold ctermfg=46 ctermbg=234
