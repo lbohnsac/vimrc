@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2022-01-13
+" 2022-03-14
 
 set nocompatible                                                        " short nocp
 set nomodeline                                                          " short noml
@@ -41,6 +41,9 @@ highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
 autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=33
 autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46
+
+" Define the background color for Visual mode highlighting
+hi Visual ctermbg=241
 
 " Enables cursor line position tracking
 set cursorline                                                          " short cul
