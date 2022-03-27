@@ -165,10 +165,18 @@ endif
 if executable('python3')
   nnoremap jq <ESC>:%!python3 -m json.tool<CR>
 endif
+" Check jq --version!
+" For jq version prior 1.6                                                                                                                                                                                         
 if executable('jq')
   nnoremap jq <ESC>:%!jq '.'<CR>
   nnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
+" For jq version 1.6+
+"if executable('jq')
+"  nnoremap jq <ESC>:%!jq<CR>
+"  nnoremap jc <ESC>:%!jq -c<CR>
+"endif
+
 
 " yq key mappings
 " https://github.com/mikefarah/yq/releases
