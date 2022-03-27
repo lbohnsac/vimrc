@@ -221,7 +221,12 @@ augroup vimrc-auto-mkdir
   endfunction
 augroup END
 " NETRW SETTINGS
+" vertical splitting for previewing files
+let g:netrw_preview   = 1
+let g:netrw_alto = 0
 " open netrw always with directory layout 3
 let g:netrw_liststyle = 3
+" directory listing will use 30% of the columns available while previewing files
+let g:netrw_winsize   = 25
 " remove the banner
 let g:netrw_banner = 0
