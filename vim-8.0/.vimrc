@@ -179,11 +179,22 @@ endif
 
 
 " yq key mappings
-" https://github.com/mikefarah/yq/releases
+" Get it here: https://github.com/mikefarah/yq/releases
+" Read documentation here: https://mikefarah.gitbook.io/yq/
+" Check yq --version!
+" For yq version prior 4.18
+"if executable('yq')
+"  nnoremap yq <ESC>:%!yq e -o=json '.'<CR> <BAR> :set filetype=json<CR>       " yaml to json
+"  nnoremap yqc <ESC>:%!yq e -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR> " yaml to compact json
+"  nnoremap yc <ESC>:%!yq e -P '.'<CR> <BAR> :set filetype=json<CR>            " json to yaml
+"endif
+" For yq version 4.18+
 if executable('yq')
-  nnoremap yq <ESC>:%!yq e -j<CR>                                       " yaml to json
-  nnoremap yc <ESC>:%!yq e -P<CR>                                       " json to yaml
+  nnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>          " yaml to json
+  nnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>    " yaml to compact json
+  nnoremap yc <ESC>:%!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>               " json to yaml
 endif
+
 
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                           " Toggle set number and set list
