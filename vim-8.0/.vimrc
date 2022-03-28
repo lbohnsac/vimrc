@@ -177,7 +177,6 @@ endif
 "  nnoremap jc <ESC>:%!jq -c<CR>
 "endif
 
-
 " yq key mappings
 " Get it here: https://github.com/mikefarah/yq/releases
 " Read documentation here: https://mikefarah.gitbook.io/yq/
@@ -220,6 +219,7 @@ augroup vimrc-auto-mkdir
     endif
   endfunction
 augroup END
+
 " NETRW SETTINGS
 " vertical splitting for previewing files
 let g:netrw_preview   = 1
