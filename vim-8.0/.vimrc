@@ -143,8 +143,8 @@ cnoremap w!! execute 'write !sudo tee % >/dev/null' <bar> edit!
 nnoremap <esc><esc> :noh<CR>
 
 " Tab key mappings
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Left> :tabprevious<CR>                                      " short gT
+nnoremap <C-Right> :tabnext<CR>                                         " short gt
 nnoremap <C-up> :tabnew<CR>
 nnoremap <C-down> :tabclose<CR>
 
