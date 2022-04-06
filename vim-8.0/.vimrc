@@ -183,15 +183,19 @@ endif
 " Check yq --version!
 " For yq version prior 4.18
 "if executable('yq')
-"  nnoremap yq <ESC>:%!yq e -o=json '.'<CR> <BAR> :set filetype=json<CR>       " yaml to json
-"  nnoremap yqc <ESC>:%!yq e -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR> " yaml to compact json
+"  nnoremap yq <ESC>:%!yq e -o=json '.'<CR> <BAR> :set filetype=json<CR>       " yaml and compact json to pretty print json
+"  nnoremap yqc <ESC>:%!yq e -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR> " yaml and pretty print json to compact json
 "  nnoremap yc <ESC>:%!yq e -P '.'<CR> <BAR> :set filetype=json<CR>            " json to yaml
 "endif
 " For yq version 4.18+
 if executable('yq')
-  nnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>          " yaml to json
-  nnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>    " yaml to compact json
+  nnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>          " yaml and compact json to pretty print json
+  nnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>    " yaml and pretty print json to compact json
+  nnoremap yqx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=json<CR>          " yaml to xml
   nnoremap yc <ESC>:%!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>               " json to yaml
+  nnoremap ycx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=yaml<CR>          " json to xml
+  nnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=yaml<CR>  " xml to json
+  nnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>  " xml to yaml
 endif
 
 
