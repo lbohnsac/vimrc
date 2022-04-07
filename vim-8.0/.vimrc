@@ -225,6 +225,44 @@ augroup vimrc-auto-mkdir
 augroup END
 
 " NETRW SETTINGS
+" Netrw is a plugin that defines its own filetype, so we are going to use that to our advantage.
+" What we are going to do is place our keymaps inside a function and create an autocommand that
+" calls it everytime vim opens a filetype netrw.
+function! NetrwMapping()
+endfunction
+
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+  " Will close the preview window with P:x!
+  nmap <buffer> P <C-w>z
+  " Mark a file or directory
+  nmap <buffer> fm mf
+  " Unmark all marke files
+  nmap <buffer> fu mu
+  " Will rename a file.
+  nmap <buffer> fr R
+  " Will copy the marked files.
+  nmap <buffer> fc mc
+  " We will use this to "skip" a step.
+  " After you mark your files you can put the cursor in a directory
+  " and this will assign the target directory and copy in one step.
+  nmap <buffer> fC mtmc
+  " Will move marked files.
+  nmap <buffer> fx mm
+  " Same thing as fC but for moving files.
+  nmap <buffer> fX mtmm
+  " Show a list of marked files.
+  nmap <buffer> fl :echo join(netrw#Expose("netrwmarkfilelist"), "\n")<CR>
+  " Show the current target directory
+  nmap <buffer> fq :echo 'Target:' . netrw#Expose("netrwmftgt")<CR>
+  " mt relacement
+  nmap <buffer> ft mtfq
+endfunction
+  
 " vertical splitting for previewing files
 let g:netrw_preview   = 1
 let g:netrw_alto = 0
