@@ -142,6 +142,9 @@ highlight TabLineFill cterm=bold ctermbg=46
 " run ':set paste!' before using ':w!!'
 cnoremap w!! execute 'write !sudo tee % >/dev/null' <bar> edit!
 
+" Delete current line without yanking the line breaks
+nnoremap dil ^d$
+
 " Clear highlights on hitting ESC twice
 nnoremap <esc><esc> :noh<CR>
 
