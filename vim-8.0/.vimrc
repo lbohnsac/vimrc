@@ -220,6 +220,12 @@ if executable('python3')
   vnoremap 64d :!python3 -c 'import base64; import sys; print(base64.b64decode(sys.stdin.read().strip().encode("utf-8")).decode("utf-8"))'<cr>
 endif
 
+" URL encode/decode selection if python3 is available                                                                                                                                                              
+if executable('python3')
+  vnoremap !ue :!python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()))'<cr>
+  vnoremap !ud :!python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()))'<cr>
+endif
+
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
