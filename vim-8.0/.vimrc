@@ -208,6 +208,11 @@ if executable('yq')
   nnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
 endif
 
+" base64-encode/decode selection if cmd base64 is available
+if executable('base64')
+  vnoremap 64e c<c-r>=system("base64 -w 0", @")<cr><esc>
+  vnoremap 64d c<c-r>=system("base64 -d", @")<cr><esc>
+endif
 
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
