@@ -214,18 +214,17 @@ if executable('base64')
   vnoremap 64d c<c-r>=system("base64 -d", @")<cr><esc>
 endif
 
-" base64-encode/decode selection if python3 is available
+" base64-encode/decode selection if python3 is available                                                                                                                                                           
 if executable('python3')
-  vnoremap 64e :!python3 -c 'import base64; import sys; print(base64.b64encode(sys.stdin.read().strip().encode("utf-8")).decode("utf-8"))'<cr>
-  vnoremap 64d :!python3 -c 'import base64; import sys; print(base64.b64decode(sys.stdin.read().strip().encode("utf-8")).decode("utf-8"))'<cr>
+  vnoremap 64e c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64encode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
+  vnoremap 64d c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64decode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
 endif
 
-" URL encode/decode selection if python3 is available                                                                                                                                                              
+" URL encode/decode selection if python3 is available
 if executable('python3')
-  vnoremap !ue :!python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()))'<cr>
-  vnoremap !ud :!python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()))'<cr>
+  vnoremap !ue c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
+  vnoremap !ud c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
 endif
-
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
