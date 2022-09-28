@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2022-07-29
+" 2022-09-28
 
 set nocompatible                                                                " short nocp
 set nomodeline                                                                  " short noml
@@ -228,6 +228,9 @@ endif
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
+
+" Disable the useless U key mapping but show a message
+:nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "<CR>
 
 " AUTOCOMMANDS
 autocmd BufWritePre * %s/\s\+$//e                                               " Remove all trailing whitespaces while saving
