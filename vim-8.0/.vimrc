@@ -59,11 +59,17 @@ highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE                          
 highlight Pmenu term=bold ctermfg=46 ctermbg=234
 highlight PmenuSel term=bold ctermfg=11 ctermbg=33
 
-" Sets the list chars
+" Sets the list chars in GTK+ environments
 " shift+ctrl+u + 00ac + space ¬
-" shift+ctrl+u + 2023 + space ‣
-" shift+ctrl+u + 00a0 + space  
+" shift+ctrl+u + 2023 + space ‣ if the triangular bullet is not shown correctly use 003e > instead
+" shift+ctrl+u + 00a0 + space
 " shift+ctrl+u + 00b7 + space ·
+
+" Sets the list chars in non GTK+ environments
+" ctrl+v + u 00ac ¬
+" ctrl+v + u 2023 ‣ if the triangular bullet is not shown correctly use 003e > instead
+" ctrl+v + u 00a0  
+" ctrl+v + u 00b7 ·
 set listchars=eol:¬,tab:‣ ,trail:·
 
 " Add the cursorcolumn for YAML files
