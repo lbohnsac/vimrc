@@ -34,7 +34,7 @@ color elflord                                                                   
 set splitbelow                                                                  " short sb
 " type 'a <BS> :' for ä instead of 'Ctrl-k a:' in insert mode
 " get a list of all digraphs with ':digraphs'
-set digraph                                                                     " short dg
+"set digraph                                                                     " short dg
 
 " STATUSLINE
 set laststatus=2                                                                " Sets status line
@@ -157,15 +157,31 @@ nnoremap <esc><esc> :noh<CR>
 " Tab key mappings
 nnoremap th :tabprevious<CR>                                                    " Move one tab right
 nnoremap tl :tabnext<CR>                                                        " Move one tb left
-nnoremap tn :tabnew<CR>                                                         " Open new tab
-nnoremap tc :tabclose<CR>                                                       " Close current tab
+nnoremap tn :tabnew<CR>                                                         " Open new tab 
+nnoremap tc :tabclose<CR>                                                       " Close current tab 
+nnoremap t0 :tabmove 0<CR>                                                      " Make current the first one 
+nnoremap t$ :tabmove $<CR>                                                      " Make current tab the last one 
+nnoremap t- :-tabmove<CR>                                                       " Push current tab one to the left
+nnoremap t+ :+tabmove<CR>                                                       " Push current tab one to the right
+
+" Not putty or MobaXterm save tab key mappings
+nnoremap <C-Left> :tabprevious<CR>                                              " Move one tab left
+nnoremap <C-Right> :tabnext<CR>                                                 " Move one tb right
+nnoremap <C-up> :tabnew<CR>                                                     " Open new tab
+nnoremap <C-down> :tabclose<CR>                                                 " Close current tab
 
 " Window key mappings
 nnoremap wt <C-W>T                                                              " Create a tab from current window
-nnoremap wh :wincmd h<CR>                                                       " Move one window up
+nnoremap wh :wincmd h<CR>                                                       " Move one window left
 nnoremap wj :wincmd j<CR>                                                       " Move one window down
-nnoremap wk :wincmd k<CR>                                                       " Move one window right
-nnoremap wl :wincmd l<CR>                                                       " Move one window left
+nnoremap wk :wincmd k<CR>                                                       " Move one window up
+nnoremap wl :wincmd l<CR>                                                       " Move one window right
+
+" Not putty or MobaXterm save window key mappings
+nnoremap <A-Left> :wincmd h<CR>                                                 " Move one window left
+nnoremap <A-Down> :wincmd j<CR>                                                 " Move one window down
+nnoremap <A-Up> :wincmd k<CR>                                                   " Move one window up
+nnoremap <A-Right> :wincmd l<CR>                                                " Move one window right
 
 " Split key mappings
 nnoremap vs :vs<CR>                                                             " Split vertically
