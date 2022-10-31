@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2022-09-28
+" 2022-10-31
 
 set nocompatible                                                                " short nocp
 set nomodeline                                                                  " short noml
@@ -198,29 +198,27 @@ if executable('python3')
   nnoremap jq <ESC>:%!python3 -m json.tool<CR>
 endif
 " Check jq --version!
-" For jq version prior 1.6                                                                                                                                                                                         
 if executable('jq')
+" For jq version 1.6+
+"  nnoremap jq <ESC>:%!jq<CR>
+"  nnoremap jc <ESC>:%!jq -c<CR>
+
+" For jq version prior 1.6                                                                                                                                                                                         
   nnoremap jq <ESC>:%!jq '.'<CR>
   nnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
-" For jq version 1.6+
-"if executable('jq')
-"  nnoremap jq <ESC>:%!jq<CR>
-"  nnoremap jc <ESC>:%!jq -c<CR>
-"endif
 
 " yq key mappings
 " Get it here: https://github.com/mikefarah/yq/releases
 " Read documentation here: https://mikefarah.gitbook.io/yq/
 " Check yq --version!
+if executable('yq')
 " For yq version prior 4.18
-"if executable('yq')
 "  nnoremap yq <ESC>:%!yq e -o=json '.'<CR> <BAR> :set filetype=json<CR>        " yaml and compact json to pretty print json
 "  nnoremap yqc <ESC>:%!yq e -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>  " yaml and pretty print json to compact json
 "  nnoremap yc <ESC>:%!yq e -P '.'<CR> <BAR> :set filetype=json<CR>             " json to yaml
-"endif
+
 " For yq version 4.18+
-if executable('yq')
   nnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>           " yaml and compact json to pretty print json
   nnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>     " yaml and pretty print json to compact json
   nnoremap yqx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=json<CR>           " yaml to xml
