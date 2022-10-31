@@ -200,12 +200,12 @@ endif
 " Check jq --version!
 if executable('jq')
 " For jq version 1.6+
-"  nnoremap jq <ESC>:%!jq<CR>
-"  nnoremap jc <ESC>:%!jq -c<CR>
+"  nnoremap jq <ESC>:%!jq<CR>                                                   " compact json to pretty print json
+"  nnoremap jc <ESC>:%!jq -c<CR>                                                " pretty print json to compact json
 
 " For jq version prior 1.6                                                                                                                                                                                         
-  nnoremap jq <ESC>:%!jq '.'<CR>
-  nnoremap jc <ESC>:%!jq -c '.'<CR>
+  nnoremap jq <ESC>:%!jq '.'<CR>                                                " compact json to pretty print json
+  nnoremap jc <ESC>:%!jq -c '.'<CR>                                             " pretty print json to compact json
 endif
 
 " yq key mappings
