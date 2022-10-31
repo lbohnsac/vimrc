@@ -66,10 +66,10 @@ highlight PmenuSel term=bold ctermfg=11 ctermbg=33
 " shift+ctrl+u + 00b7 + space ·
 
 " Sets the list chars in non GTK+ environments
-" ctrl+v + u 00ac ¬
-" ctrl+v + u 2023 ‣ if the triangular bullet is not shown correctly use 003e > instead
-" ctrl+v + u 00a0  
-" ctrl+v + u 00b7 ·
+" ctrl+v + u + 00ac ¬
+" ctrl+v + u + 2023 ‣ if the triangular bullet is not shown correctly use 003e > instead
+" ctrl+v + u + 00a0  
+" ctrl+v + u + 00b7 ·
 set listchars=eol:¬,tab:‣ ,trail:·
 
 " Add the cursorcolumn for YAML files
