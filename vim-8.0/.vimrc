@@ -70,6 +70,16 @@ highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE                          
 " Keep cursor at the bottom of the visual selection after you yank it.
 vmap y ygv<Esc>
 
+" Define the text colour for Spell highlights
+highlight clear SpellBad
+highlight SpellBad cterm=bold ctermfg=9
+highlight clear SpellCap
+highlight SpellCap cterm=bold ctermfg=12
+highlight clear SpellRare
+highlight SpellRare cterm=bold ctermfg=13
+highlight clear SpellLocal
+highlight SpellLocal cterm=bold ctermfg=14
+
 " Pmenu config
 highlight Pmenu term=bold ctermfg=46 ctermbg=234
 highlight PmenuSel term=bold ctermfg=11 ctermbg=33
