@@ -209,8 +209,8 @@ nnoremap <A-Up> :wincmd k<CR>                                                   
 nnoremap <A-Right> :wincmd l<CR>                                                " Move one window right
 
 " Split key mappings
-nnoremap vs :vs<CR>                                                             " Split vertically
-nnoremap sp :sp<CR>                                                             " Split horizontally
+nnoremap sv :vs<CR>                                                             " Split vertically
+nnoremap sh :sp<CR>                                                             " Split horizontally
 
 " jq key mappings
 if executable('python')
