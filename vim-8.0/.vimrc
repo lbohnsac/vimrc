@@ -27,6 +27,7 @@ set fileencoding=utf-8                                                          
 set wildmenu                                                                    " short wmnu
 set equalalways                                                                 " short ea
 set eadirection=both                                                            " short ead
+set nospell
 set spelllang=en,de_de
 color elflord                                                                   " Use color scheme
 " Puts new split windows to the bottom of the current.
