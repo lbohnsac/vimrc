@@ -13,7 +13,6 @@ set title
 set showmode                                                                    " short smd
 set showcmd                                                                     " short sc
 set list
-set paste
 set cmdheight=1
 set cryptmethod=blowfish2                                                       " short cm
 set number                                                                      " short nu
