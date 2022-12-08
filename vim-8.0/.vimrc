@@ -46,7 +46,7 @@ autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=1 | set paste
 autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46 | set nopaste
 
 " Define the background color for Visual mode highlighting
-hi Visual ctermbg=241
+highlight Visual ctermbg=241
 
 " CURSOR
 " Use a blinking block cursor within insert mode and a steady block cursor everywhere else.
