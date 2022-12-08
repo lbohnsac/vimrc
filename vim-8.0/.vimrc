@@ -47,6 +47,19 @@ autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46 | set no 
 " Define the background color for Visual mode highlighting
 hi Visual ctermbg=241
 
+" CURSOR
+" Use a blinking block cursor within insert mode and a steady block cursor everywhere else.
+" Reference chart of values:
+ "   Ps = 0  -> blinking block.
+ "   Ps = 1  -> blinking block.
+ "   Ps = 2  -> steady block.
+ "   Ps = 3  -> blinking underline.
+ "   Ps = 4  -> steady underline.
+ "   Ps = 5  -> blinking bar.
+ "   Ps = 6  -> steady bar.
+let &t_SI = "\e[1 q"
+let &t_EI = "\e[2 q"
+
 " Enables cursor line position tracking
 set cursorline                                                                  " short cul
 highlight clear CursorLine                                                      " Removes the underline causes by enabling cursorline:
