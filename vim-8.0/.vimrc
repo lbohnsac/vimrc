@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2022-10-31
+" 2022-12-08
 
 set nocompatible                                                                " short nocp
 set nomodeline                                                                  " short noml
@@ -42,7 +42,7 @@ set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fe
 highlight StatusLine term=bold ctermbg=black ctermfg=46
 highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
-autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=1
+autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=1 | set paste
 autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46
 
 " Define the background color for Visual mode highlighting
