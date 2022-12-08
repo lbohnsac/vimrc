@@ -67,6 +67,9 @@ highlight LineNr ctermfg=8                                                      
 highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=46                       " Sets the current line number colour
 highlight CursorLine cterm=NONE ctermbg=234 cterm=NONE                          " Sets the background colour of the curtrent line
 
+" Keep cursor at the bottom of the visual selection after you yank it.
+vmap y ygv<Esc>
+
 " Pmenu config
 highlight Pmenu term=bold ctermfg=46 ctermbg=234
 highlight PmenuSel term=bold ctermfg=11 ctermbg=33
