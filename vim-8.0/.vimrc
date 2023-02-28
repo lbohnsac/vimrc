@@ -250,7 +250,7 @@ if executable('yq')
   nnoremap yqx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>           " yaml to xml
   nnoremap yc <ESC>:%!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>                " json to yaml
   nnoremap ycx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>           " json to xml
-  nnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to json
+  nnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=json<CR>   " xml to json
   nnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
 endif
 
