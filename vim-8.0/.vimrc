@@ -284,6 +284,8 @@ autocmd BufWritePre * %s/\s\+$//e                                               
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 autocmd FileType netrw setl bufhidden=delete
+" Colourise jinja2 out of the box
+autocmd BufNewFile,BufRead *.jinja2,*.j2,*.jinja set filetype=yaml
 
 " AUTOCOMMANDGROUPS
 " https://travisjeffery.com/b/2011/11/saving-files-in-nonexistent-directories-with-vim/
