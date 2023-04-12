@@ -183,10 +183,10 @@ nnoremap <esc><esc> :noh<CR>
 " Tab key mappings
 nnoremap th :tabprevious<CR>                                                    " Move one tab right
 nnoremap tl :tabnext<CR>                                                        " Move one tb left
-nnoremap tn :tabnew<CR>                                                         " Open new tab 
-nnoremap tc :tabclose<CR>                                                       " Close current tab 
-nnoremap t0 :tabmove 0<CR>                                                      " Make current the first one 
-nnoremap t$ :tabmove $<CR>                                                      " Make current tab the last one 
+nnoremap tn :tabnew<CR>                                                         " Open new tab
+nnoremap tc :tabclose<CR>                                                       " Close current tab
+nnoremap t0 :tabmove 0<CR>                                                      " Make current the first one
+nnoremap t$ :tabmove $<CR>                                                      " Make current tab the last one
 nnoremap t- :-tabmove<CR>                                                       " Push current tab one to the left
 nnoremap t+ :+tabmove<CR>                                                       " Push current tab one to the right
 
@@ -229,7 +229,7 @@ if executable('jq')
 "  nnoremap jq <ESC>:%!jq<CR> <BAR> :set filetype=json<CR>                      " compact json to pretty print json
 "  nnoremap jc <ESC>:%!jq -c<CR> <BAR> :set filetype=json<CR>                   " pretty print json to compact json
 
-" For jq version prior 1.6                                                                                                                                                                                         
+" For jq version prior 1.6
   nnoremap jq <ESC>:%!jq '.'<CR> <BAR> :set filetype=json<CR>                   " compact json to pretty print json
   nnoremap jc <ESC>:%!jq -c '.'<CR> <BAR> :set filetype=json<CR>                " pretty print json to compact json
 endif
@@ -260,7 +260,7 @@ if executable('base64')
   vnoremap 64d c<c-r>=system("base64 -d", @")<cr><esc>
 endif
 
-" base64-encode/decode selection if python3 is available                                                                                                                                                           
+" base64-encode/decode selection if python3 is available
 if executable('python3')
   vnoremap 64e c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64encode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
   vnoremap 64d c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64decode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
@@ -323,14 +323,14 @@ function! NetrwMapping()
   " We will use this to "skip" a step
   " After you mark your files you can put the cursor in a directory
   " and this will assign the target directory and copy in one step.
-  nmap <buffer> fC mtmc                                                  
+  nmap <buffer> fC mtmc
   nmap <buffer> fx mm                                                           " Will move marked files
   nmap <buffer> fX mtmm                                                         " Same thing as fC but for moving files
   nmap <buffer> fl :echo join(netrw#Expose("netrwmarkfilelist"), "\n")<CR>      " Show a list of marked files
   nmap <buffer> fq :echo 'Target:' . netrw#Expose("netrwmftgt")<CR>             " Show the current target directory
   nmap <buffer> ft mtfq                                                         " mt relacement
 endfunction
-  
+
 " vertical splitting for previewing files
 let g:netrw_preview   = 1
 let g:netrw_alto = 0
