@@ -275,6 +275,7 @@ endif
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
 nnoremap sp <ESC>:set spell!<CR>                                                " Toggle set spell
+nnoremap eol <ESC>:set binary! <BAR> set noeol!<CR>                             " Toggle set binary and set noeol
 
 " Disable the useless U key mapping but show a message
 :nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "<CR>
