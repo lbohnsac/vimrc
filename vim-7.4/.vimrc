@@ -98,14 +98,14 @@ endif
 set undodir=~/.vim/undo//                                               " Where to store undos
 set undofile                                                            " Turn on undo option
 
-set viminfo=%,<100,'10,/50,:100,h,f0,n~/.vim/viminfo                    " viminfo stores the state of the previous editing session
+set viminfo=%,<1000,'10,/50,:100,h,f0,n~/.vim/viminfo                   " viminfo stores the state of the previous editing session
 "           - ---- --- --- ---- - -- ---------------
-"           | |    |   |   |    | |  + viminfo file path
-"           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
-"           | |    |   |   |    + disable 'hlsearch' loading viminfo
-"           | |    |   |   + comand line history saved
-"           | |    |   + search history saved
-"           | |    + files marks saved
+"           | |     |   |   |    | |  + viminfo file path
+"           | |     |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |     |   |   |    + disable 'hlsearch' loading viminfo
+"           | |     |   |   + comand line history saved
+"           | |     |   + search history saved
+"           | |     + files marks saved
 "           | + lines saved each register
 "           + save/restore buffer list
 
