@@ -289,6 +289,8 @@ autocmd FileType netrw setl bufhidden=delete
 autocmd BufNewFile,BufRead *.jinja2,*.j2,*.jinja set filetype=yaml
 " Move the quickfix window to the bottom of the window layout
 autocmd FileType qf wincmd J
+" Move the help window to the bottom of the window layout
+autocmd FileType help wincmd J
 
 " AUTOCOMMANDGROUPS
 " https://travisjeffery.com/b/2011/11/saving-files-in-nonexistent-directories-with-vim/
