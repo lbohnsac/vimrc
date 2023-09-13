@@ -69,9 +69,9 @@
 ## Quickfix List
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Shortcut&nbsp;&nbsp;&nbsp;|&nbsp;Comment&nbsp;|
 |---|---|---|
-|**Open quickfix list window**|**`copen`**||
-|**List all quickfix lists**|**`chistory`**|also **`chi`** works|
-|**Go to the newer quickfix lists**|**`cnewer`**|also **`cnew`** works|
-|**Go to the older quickfix lists**|**`colder`**|also **`col`** works|
-|**Close quickfix list window**|**`cclose`**|also **`ccl`** works|
-|**Do something in all files in the quickfix**|**`cdo`**|e.g. **`cdo s/pattern/replacement/`**|
+|**Open quickfix list window**|**`:copen`**||
+|**List all quickfix lists**|**`:chistory`**|also **`:chi`** works|
+|**Go to the newer quickfix lists**|**`:cnewer`**|also **`:cnew`** works|
+|**Go to the older quickfix lists**|**`:colder`**|also **`:col`** works|
+|**Close quickfix list window**|**`:cclose`**|also **`:ccl`** works|
+|**Do something in all files in the quickfix**|**`:cdo`**|e.g. **`:cdo s/pattern/replacement/`**|
