@@ -297,6 +297,7 @@ if executable('yq')
   nnoremap ycx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " json to xml
   nnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=json<CR>   " xml to json
   nnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
+  nnoremap yqs <ESC>:%!yq -o=shell '.'<CR>                                      " yaml to shell
 endif
 
 " base64-encode/decode selection if cmd base64 is available
