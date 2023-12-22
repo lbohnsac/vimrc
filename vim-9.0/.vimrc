@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2023-04-19
+" 2023-12-22
 
 " Color scheme (elflord from 2003) if you do not like it comment out or delete the lines from her to line 54 and define a colorscheme in line 77
 set background=dark
