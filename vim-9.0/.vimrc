@@ -74,7 +74,7 @@ set equalalways                                                                 
 set eadirection=both                                                            " short ead
 set nospell
 set spelllang=en,de_de
-color elflord                                                                   " Use color scheme
+"color elflord                                                                   " Use color scheme
 " Puts new split windows to the bottom of the current.
 set splitbelow                                                                  " short sb
 " type 'a <BS> :' for ä instead of 'Ctrl-k a:' in insert mode
