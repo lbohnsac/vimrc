@@ -333,7 +333,7 @@ autocmd BufWritePre * %s/\s\+$//e                                               
 autocmd FileType netrw setl bufhidden=delete
 " Colourise jinja2 out of the box
 autocmd BufNewFile,BufRead *.jinja2,*.j2,*.jinja set filetype=yaml
-" Move the quickfix window to the bottom of the window layout                                                                                                                                                                                 
+" Move the quickfix window to the bottom of the window layout
 autocmd FileType qf wincmd J
 " Move the help window to the bottom of the window layout
 autocmd FileType help wincmd J
