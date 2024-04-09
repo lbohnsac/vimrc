@@ -317,6 +317,15 @@ if executable('python3')
   vnoremap !ue c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
   vnoremap !ud c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
 endif
+
+" Move lines up and down in normal mode
+nnoremap <C-k> :m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
+
+" Move lines up and down in visual mode                                                                                                                                                                                                       
+vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap <C-j> :m '>+1<CR>gv=gv
+
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
