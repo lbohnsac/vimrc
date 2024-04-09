@@ -326,6 +326,12 @@ nnoremap <C-j> :m .+1<CR>==
 vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>gv=gv
 
+" Swap the current character with the next, without changing the cursor position
+nnoremap gc xph 
+
+" Swap the current word with the next, without changing cursor position
+nnoremap gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
+
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
