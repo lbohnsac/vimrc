@@ -289,6 +289,9 @@ nnoremap gc xph
 " Swap the current word with the next, without changing cursor position
 nnoremap gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 
+" Show unsaved changes
+nnoremap sc :DiffOrig<CR>
+
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
