@@ -28,7 +28,7 @@ hi Ignore       ctermfg=black   guifg=bg
 hi Error  term=reverse ctermbg=Red ctermfg=White guibg=Red guifg=White
 hi Todo term=standout ctermbg=Yellow ctermfg=Black guifg=Blue guibg=Yellow
 
-" Common groups that link to default highlighting.                                                                                                                                                                                            
+" Common groups that link to default highlighting.
 " You can specify other highlighting easily.
 hi link String  Constant
 hi link Character Constant
