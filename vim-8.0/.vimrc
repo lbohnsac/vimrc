@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2022-12-08
+" 2024-09-25
 
 set nocompatible                                                                " short nocp
 set nomodeline                                                                  " short noml
@@ -44,8 +44,8 @@ set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fe
 highlight StatusLine term=bold ctermbg=black ctermfg=46
 highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
-autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=1 | set paste
-autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46 | set nopaste | set et | retab!
+autocmd InsertEnter * hi StatusLine term=bold ctermbg=11 ctermfg=1
+autocmd InsertLeave * hi StatusLine term=bold ctermbg=black ctermfg=46 | set et | retab!
 
 " Define the background color for Visual mode highlighting
 highlight Visual ctermbg=241
@@ -294,9 +294,25 @@ nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
 nnoremap sp <ESC>:set spell!<CR>                                                " Toggle set spell
 nnoremap eol <ESC>:set binary! <BAR> set noeol!<CR>                             " Toggle set binary and set noeol
+nnoremap swf <ESC>:set swf!<CR>"                                                " Toggle set swf (set swapfile on/off)
+
+" Toggle paste by hitting <ESC> thrice
+nnoremap <ESC><ESC><ESC> :set paste!<CR>"                                       " Toggle set paste
 
 " Disable the useless U key mapping but show a message
-:nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "<CR>
+nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "<CR>
+
+" INSERT MODE KEY MAPPINGS
+" Auto parenthesis insert
+inoremap ( ()<LEFT>
+" Auto bracket insert
+inoremap [ []<LEFT>
+" Auto brace insert
+inoremap { {}<LEFT>
+" Auto quote insert
+inoremap ' ''<LEFT>
+" Auto double brace insert (jinja2 style)
+inoremap {{ {{  }}<ESC>F{la
 
 " AUTOCOMMANDS
 autocmd BufWritePre * %s/\s\+$//e                                               " Remove all trailing whitespaces while saving
