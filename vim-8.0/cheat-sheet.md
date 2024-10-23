@@ -31,7 +31,7 @@
 |**Move one tab left**|**`tl`**|**`Ctrl`** **`⇐`**|
 |**Open new tab**|**`tn`**|**`Ctrl`** **`⇑`**|
 |**Close current tab**|**`tc`**|**`Ctrl`** **`⇓`**|
-|**Make current the first one**|**`t0`**|&nbsp;|
+|**Make current tab the first one**|**`t0`**|&nbsp;|
 |**Make current tab the last one**|**`t$`**||&nbsp;|
 |**Push current tab one to the left**|**`t-`**|&nbsp;|
 |**Push current tab one to the right**|**`t+`**|&nbsp;|
