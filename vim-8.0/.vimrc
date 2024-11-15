@@ -8,6 +8,7 @@
 " 2024-09-25
 
 set nocompatible                                                                " short nocp
+set history=10000                                                               " short hi
 set nomodeline                                                                  " short noml
 set title
 set showmode                                                                    " short smd
