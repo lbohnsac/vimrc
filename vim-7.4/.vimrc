@@ -8,6 +8,7 @@
 " 2022-03-14
 
 set nocompatible                                                        " short nocp
+set history=10000                                                       " short hi
 set modeline
 set showmode                                                            " short smd
 set showcmd                                                             " short sc
