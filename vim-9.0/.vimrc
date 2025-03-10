@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2024-09-25
+" 2025-03-10
 
 " Color scheme (elflord from 2003) if you do not like it comment out or delete the lines from her to line 54 and define a colorscheme in line 77
 set background=dark
@@ -216,6 +216,10 @@ highlight TabLine cterm=bold ctermfg=46 ctermbg=242
 highlight TabLineSel cterm=bold ctermfg=46
 highlight TabLineFill cterm=bold ctermbg=46
 
+" COMMAND-LINE MAPPINGS
+" Define the command Diff to produce a patch output for all unsaved changes
+command Diff execute 'w !git diff --no-index % -'
+
 " KEY MAPPINGS
 " Allow saving of files as sudo when we forgot to start vim using sudo.
 " If the 'paste' option is set, then command-line mode maps are disabled.
@@ -335,7 +339,7 @@ nnoremap gc xph
 " Swap the current word with the next, without changing cursor position
 nnoremap gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 
-" Show unsaved changes
+" Show unsaved changes like vimdiff
 nnoremap sc :DiffOrig<CR>
 
 " Toggle mappings
