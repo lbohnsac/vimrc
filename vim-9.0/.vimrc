@@ -342,6 +342,9 @@ nnoremap gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch
 " Show unsaved changes like vimdiff
 nnoremap sc :DiffOrig<CR>
 
+" Show unsaved changes like patch
+nnoremap scp :Diff<CR>
+
 " Toggle mappings
 nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
 nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
