@@ -53,7 +53,7 @@ hi link SpecialComment Special
 hi link Debug   Special
 
 set nocompatible                                                                " short nocp
-set history=10000                                                               " short hi
+set history=10000                                                               " short hi (default 50)
 set nomodeline                                                                  " short noml
 set title
 set showmode                                                                    " short smd
@@ -75,14 +75,14 @@ set equalalways                                                                 
 set eadirection=both                                                            " short ead
 set nospell
 set spelllang=en,de_de
-"color elflord                                                                   " Use color scheme
+"color elflord                                                                  " Use color scheme
 " Puts new horizontal split windows to the bottom of the current.                                                                                                                                                                             
 set splitbelow                                                                  " short sb
 " Puts new vertical splits to the right
 set splitright                                                                  " short spr
 " type 'a <BS> :' for ä instead of 'Ctrl-k a:' in insert mode
 " get a list of all digraphs with ':digraphs'
-"set digraph                                                                     " short dg
+"set digraph                                                                    " short dg
 
 " STATUSLINE
 set laststatus=2                                                                " Sets status line
@@ -331,7 +331,7 @@ nnoremap <C-j> :m .+1<CR>==
 
 " Move lines up and down in visual mode                                                                                                                                                                                                       
 vnoremap <C-k> :m '<-2<CR>gv=gv
-vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-j> :m '>+1<CR>g
 
 " Swap the current character with the next, without changing the cursor position
 nnoremap gc xph 
@@ -346,17 +346,17 @@ nnoremap sc :DiffOrig<CR>
 nnoremap scp :Diff<CR>
 
 " Toggle mappings
-nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                                   " Toggle set number and set list
-nnoremap nr <ESC>:set relativenumber!<CR>                                       " Toggle set relativenumber
-nnoremap sp <ESC>:set spell!<CR>                                                " Toggle set spell
-nnoremap eol <ESC>:set binary! <BAR> set noeol!<CR>                             " Toggle set binary and set noeol
+nnoremap cp <ESC>:set nu! <BAR> set list!<CR>"                                  " Toggle set number and set list
+nnoremap nr <ESC>:set relativenumber!<CR>"                                      " Toggle set relativenumber
+nnoremap sp <ESC>:set spell!<CR>"                                               " Toggle set spell
+nnoremap eol <ESC>:set binary! <BAR> set noeol!<CR>"                            " Toggle set binary and set noeol
 nnoremap swf <ESC>:set swf!<CR>"                                                " Toggle set swf (set swapfile on/off)
 
 " Toggle paste by hitting <ESC> thrice
 nnoremap <ESC><ESC><ESC> :set paste!<CR>"                                       " Toggle set paste
 
 " Disable the useless U key mapping but show a message
-:nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "<CR>
+nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "<CR>
 
 " INSERT MODE KEY MAPPINGS
 " Auto parenthesis insert
