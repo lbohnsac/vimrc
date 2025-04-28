@@ -7,7 +7,7 @@
 " Lars Bohnsack
 " 2025-04-19
 
-" Color scheme (elflord from 2003) if you do not like it comment out or delete the lines from her to line 54 and define a colorscheme in line 77
+" Color scheme (elflord from 2003) if you do not like it comment out or delete the lines from her to line 54 and define a colorscheme in line 78
 set background=dark
 hi clear
 if exists("syntax_on")
