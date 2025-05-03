@@ -150,7 +150,7 @@ endif
 "autocmd BufWritePost,BufLeave,WinLeave ?* mkview                               " create a view while saving the file
 autocmd BufReadPre ?* silent loadview                                           " load a view while reading the file
 
-set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo                           " viminfo stores the state of the previous editing session
+set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo                      " viminfo stores the state of the previous editing session
 "           - ----- ---- --- --- ---- - -- ---------------
 "           | |     |    |   |   |    | |  + viminfo file path
 "           | |     |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
