@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2025-04-19
+" 2025-05-03
 
 " Color scheme (elflord from 2003) if you do not like it comment out or delete the lines from her to line 54 and define a colorscheme in line 78
 set background=dark
@@ -198,14 +198,15 @@ endif
 "autocmd BufWritePost,BufLeave,WinLeave ?* mkview                               " create a view while saving the file
 autocmd BufReadPre ?* silent loadview                                           " load a view while reading the file
 
-set viminfo=%,<1000,'10,/50,:100,h,f0,n~/.vim/viminfo                           " viminfo stores the state of the previous editing session
-"           - ---- --- --- ---- - -- ---------------
-"           | |     |   |   |    | |  + viminfo file path
-"           | |     |   |   |    | + file marks 0-9,A-Z 0=NOT stored
-"           | |     |   |   |    + disable 'hlsearch' loading viminfo
-"           | |     |   |   + comand line history saved
-"           | |     |   + search history saved
-"           | |     + files marks saved
+set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo                      " viminfo stores the state of the previous editing session
+"           - ----- ---- --- --- ---- - -- ---------------
+"           | |     |    |   |   |    | |  + viminfo file path
+"           | |     |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |     |    |   |   |    + disable 'hlsearch' loading viminfo
+"           | |     |    |   |   + comand line history saved
+"           | |     |    |   + search history saved                                                                                           
+"           | |     |    + files marks saved
+"           | |     + maximum size of an item in Kbyte 
 "           | + lines saved each register
 "           + save/restore buffer list
 
