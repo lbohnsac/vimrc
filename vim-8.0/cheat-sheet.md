@@ -87,3 +87,11 @@
 |**Go to the older quickfix lists**|**`:colder`**|also **`:col`** works|
 |**Close quickfix list window**|**`:cclose`**|also **`:ccl`** works|
 |**Do something in all files in the quickfix**|**`:cdo`**|e.g. **`:cdo s/pattern/replacement/`**|
+
+## Registers
+> Current file name is always in register %
+
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Shortcut&nbsp;&nbsp;&nbsp;|
+|---|---|
+|Paste current file name (in insert mode)|**`Ctrl`** **`r`** **`%`**|
+|Paste current file name (in normal mode)|**`"%p`**|
