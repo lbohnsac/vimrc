@@ -76,7 +76,7 @@ set eadirection=both                                                            
 set nospell
 set spelllang=en,de_de
 "color elflord                                                                  " Use color scheme
-" Puts new horizontal split windows to the bottom of the current.                                                                                                                                                                             
+" Puts new horizontal split windows to the bottom of the current.
 set splitbelow                                                                  " short sb
 " Puts new vertical splits to the right
 set splitright                                                                  " short spr
@@ -86,7 +86,7 @@ set splitright                                                                  
 
 " STATUSLINE
 set laststatus=2                                                                " Sets status line
-set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}\ %{&spell?'spellcheck':''}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
+set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}\ %{&spell?'spellcheck':''}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P
 highlight StatusLine term=bold ctermbg=black ctermfg=46
 highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
@@ -142,9 +142,9 @@ highlight PmenuSel term=bold ctermfg=11 ctermbg=33
 " Sets the list chars in non GTK+ environments
 " ctrl+v + u + 00ac ¬
 " ctrl+v + u + 2023 ‣ if the triangular bullet is not shown correctly use 003e > instead
-" ctrl+v + u + 00a0  
+" ctrl+v + u + 00a0 
 " ctrl+v + u + 00b7 ·
-set listchars=eol:¬,tab:‣ ,trail:·
+set listchars=eol:¬,tab:‣ ,trail:·
 
 " Add the cursorcolumn for YAML files
 autocmd FileType yaml setlocal cursorcolumn                                     " short cuc
@@ -160,7 +160,7 @@ highlight Comment cterm=italic
 
 " TERMINAL
 hi Terminal ctermbg=234 ctermfg=46
-                                                                                                                             
+
 " CONFIG DIRECTORY SETUP
 if isdirectory($HOME . '/.vim') == 0                                            " take care that dir ~/.vim is existing
   call mkdir($HOME . '/.vim', 'p')
@@ -204,9 +204,9 @@ set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo                      
 "           | |     |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
 "           | |     |    |   |   |    + disable 'hlsearch' loading viminfo
 "           | |     |    |   |   + comand line history saved
-"           | |     |    |   + search history saved                                                                                           
+"           | |     |    |   + search history saved
 "           | |     |    + files marks saved
-"           | |     + maximum size of an item in Kbyte 
+"           | |     + maximum size of an item in Kbyte
 "           | + lines saved each register
 "           + save/restore buffer list
 
@@ -333,12 +333,12 @@ endif
 nnoremap <C-k> :m .-2<CR>==
 nnoremap <C-j> :m .+1<CR>==
 
-" Move lines up and down in visual mode                                                                                                                                                                                                       
+" Move lines up and down in visual mode
 vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>g
 
 " Swap the current character with the next, without changing the cursor position
-nnoremap gc xph 
+nnoremap gc xph
 
 " Swap the current word with the next, without changing cursor position
 nnoremap gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
