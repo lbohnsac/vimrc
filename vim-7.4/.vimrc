@@ -35,7 +35,7 @@ set splitbelow                                                          " short 
 
 " STATUSLINE
 set laststatus=2                                                        " Sets status line
-set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
+set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P
 highlight StatusLine term=bold ctermbg=black ctermfg=46
 highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
@@ -105,9 +105,9 @@ set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo              " viminf
 "           | |     |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
 "           | |     |    |   |   |    + disable 'hlsearch' loading viminfo
 "           | |     |    |   |  + comand line history saved
-"           | |     |    |   + search history saved                                                                                           
+"           | |     |    |   + search history saved
 "           | |     |    + files marks saved
-"           | |     + maximum size of an item in Kbyte 
+"           | |     + maximum size of an item in Kbyte
 "           | + lines saved each register
 "           + save/restore buffer list
 
@@ -177,7 +177,8 @@ nnoremap cp <ESC>:set nu! <BAR> set list!<CR>                           " Toggle
 nnoremap nr <ESC>:set relativenumber!<CR>                               " Toggle set relativenumber
 
 " AUTOCOMMANDS
-autocmd BufWritePre * %s/\s\+$//e                                       " Remove all trailing whitespaces while saving
+" Remove all trailing whitespaces while saving
+autocmd BufWritePre * %s/\s\+$//e
 
 " AUTOCOMMANDGROUPS
 augroup vimrc-auto-mkdir
