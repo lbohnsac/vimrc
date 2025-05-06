@@ -76,7 +76,7 @@ set eadirection=both                                                            
 set nospell
 set spelllang=en,de_de
 "color elflord                                                                  " Use color scheme
-" Puts new horizontal split windows to the bottom of the current.                                                                                                                                                                             
+" Puts new horizontal split windows to the bottom of the current.
 set splitbelow                                                                  " short sb
 " Puts new vertical splits to the right
 set splitright                                                                  " short spr
@@ -86,7 +86,7 @@ set splitright                                                                  
 
 " STATUSLINE
 set laststatus=2                                                                " Sets status line
-set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}\ %{&spell?'spellcheck':''}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P 
+set statusline=\ %F\ %r\ %m\ %{&endofline?'':'[noeol]'}\ %y\ %{strlen(&fenc)?&fenc:'none'}\ %{&spell?'spellcheck':''}%=%-26.(\[row\:\ %l\ of\ %L\]\ \[col\:\ %c%V%)\]\ \ %P
 highlight StatusLine term=bold ctermbg=black ctermfg=46
 highlight StatusLineTerm term=bold ctermbg=241 ctermfg=46
 highlight StatusLineTermNC term=bold ctermbg=46 ctermfg=0
@@ -201,9 +201,9 @@ set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo                      
 "           | |     |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
 "           | |     |    |   |   |    + disable 'hlsearch' loading viminfo
 "           | |     |    |   |   + comand line history saved
-"           | |     |    |   + search history saved                                                                                           
+"           | |     |    |   + search history saved
 "           | |     |    + files marks saved
-"           | |     + maximum size of an item in Kbyte 
+"           | |     + maximum size of an item in Kbyte
 "           | + lines saved each register
 "           + save/restore buffer list
 
@@ -330,12 +330,12 @@ endif
 nnoremap <C-k> :m .-2<CR>==
 nnoremap <C-j> :m .+1<CR>==
 
-" Move lines up and down in visual mode                                                                                                                                                                                                       
+" Move lines up and down in visual mode
 vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>g
 
 " Swap the current character with the next, without changing the cursor position
-nnoremap gc xph 
+nnoremap gc xph
 
 " Swap the current word with the next, without changing cursor position
 nnoremap gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
@@ -372,7 +372,8 @@ inoremap ' ''<LEFT>
 inoremap {{ {{  }}<ESC>F{la
 
 " AUTOCOMMANDS
-autocmd BufWritePre * %s/\s\+$//e                                               " Remove all trailing whitespaces while saving
+" Remove all trailing whitespaces while saving
+autocmd BufWritePre * %s/\s\+$//e
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 autocmd FileType netrw setl bufhidden=delete
