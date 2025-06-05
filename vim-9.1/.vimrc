@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2025-05-03
+" 2025-06-05
 
 " Color scheme (elflord from 2003) if you do not like it comment out or delete the lines from her to line 54 and define a colorscheme in line 78
 set background=dark
@@ -236,6 +236,9 @@ nnoremap dil ^d$
 " Clear highlights on hitting ESC twice
 nnoremap <esc><esc> :noh<CR>
 
+" Select all
+nnoremap <C-a> ggv$G$
+
 " Tab key mappings
 nnoremap th :tabprevious<CR>                                                    " Move one tab right
 nnoremap tl :tabnext<CR>                                                        " Move one tb left
@@ -271,13 +274,13 @@ nnoremap sh :sp<CR>                                                             
 
 " jq key mappings
 if executable('python')
-  nnoremap jq <ESC>:%!python -m json.tool<CR>
+  xnoremap jq <ESC>:%!python -m json.tool<CR>
 endif
 if executable('python2')
-  nnoremap jq <ESC>:%!python2 -m json.tool<CR>
+  xnoremap jq <ESC>:%!python2 -m json.tool<CR>
 endif
 if executable('python3')
-  nnoremap jq <ESC>:%!python3 -m json.tool<CR>
+  xnoremap jq <ESC>:%!python3 -m json.tool<CR>
 endif
 " Check jq --version!
 if executable('jq')
@@ -286,8 +289,8 @@ if executable('jq')
 "  nnoremap jc <ESC>:%!jq -c<CR> <BAR> :set filetype=json<CR>                   " pretty print json to compact json
 
 " For jq version prior 1.6
-  nnoremap jq <ESC>:%!jq '.'<CR> <BAR> :set filetype=json<CR>                   " compact json to pretty print json
-  nnoremap jc <ESC>:%!jq -c '.'<CR> <BAR> :set filetype=json<CR>                " pretty print json to compact json
+  xnoremap jq <ESC>:%!jq '.'<CR> <BAR> :set filetype=json<CR>                   " compact json to pretty print json
+  xnoremap jc <ESC>:%!jq -c '.'<CR> <BAR> :set filetype=json<CR>                " pretty print json to compact json
 endif
 
 " yq key mappings
@@ -301,32 +304,32 @@ if executable('yq')
 "  nnoremap yc <ESC>:%!yq e -P '.'<CR> <BAR> :set filetype=json<CR>             " json to yaml
 
 " For yq version 4.18+
-  nnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>           " yaml and compact json to pretty print json
-  nnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>     " yaml and pretty print json to compact json
-  nnoremap yqx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " yaml to xml
-  nnoremap yc <ESC>:%!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>                " json to yaml
-  nnoremap ycx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " json to xml
-  nnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=json<CR>   " xml to json
-  nnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
-  nnoremap yqs <ESC>:%!yq -o=shell '.'<CR>                                      " yaml to shell
+  xnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>           " yaml and compact json to pretty print json
+  xnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>     " yaml and pretty print json to compact json
+  xnoremap yqx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " yaml to xml
+  xnoremap yc <ESC>:%!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>                " json to yaml
+  xnoremap ycx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " json to xml
+  xnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=json<CR>   " xml to json
+  xnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
+  xnoremap yqs <ESC>:%!yq -o=shell '.'<CR>                                      " yaml to shell
 endif
 
 " base64-encode/decode selection if cmd base64 is available
 if executable('base64')
-  vnoremap 64e c<c-r>=system("base64 -w 0", @")<cr><esc>
-  vnoremap 64d c<c-r>=system("base64 -d", @")<cr><esc>
+  xnoremap 64e c<c-r>=system("base64 -w 0", @")<cr><esc>
+  xnoremap 64d c<c-r>=system("base64 -d", @")<cr><esc>
 endif
 
 " base64-encode/decode selection if python3 is available
 if executable('python3')
-  vnoremap 64e c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64encode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
-  vnoremap 64d c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64decode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
+  xnoremap 64e c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64encode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
+  xnoremap 64d c<c-r>=system("python3 -c 'import base64; import sys; print(base64.b64decode(sys.stdin.read().strip().encode(\"utf-8\")).decode(\"utf-8\"), end=\"\")'", @")<cr><esc>
 endif
 
 " URL encode/decode selection if python3 is available
 if executable('python3')
-  vnoremap !ue c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
-  vnoremap !ud c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
+  xnoremap !ue c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
+  xnoremap !ud c<c-r>=system("python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()), end=\"\")'", @")<cr><esc>
 endif
 
 " Move lines up and down in normal mode
@@ -334,8 +337,8 @@ nnoremap <C-k> :m .-2<CR>==
 nnoremap <C-j> :m .+1<CR>==
 
 " Move lines up and down in visual mode
-vnoremap <C-k> :m '<-2<CR>gv=gv
-vnoremap <C-j> :m '>+1<CR>g
+xnoremap <C-k> :m '<-2<CR>gv=gv
+xnoremap <C-j> :m '>+1<CR>g
 
 " Swap the current character with the next, without changing the cursor position
 nnoremap gc xph

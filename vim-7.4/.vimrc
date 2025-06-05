@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2025-05-03
+" 2025-06-05
 
 set nocompatible                                                        " short nocp
 set history=10000                                                       " short hi
@@ -133,6 +133,8 @@ nnoremap dil ^d$
 " Clear highlights on hitting ESC twice
 nnoremap <esc><esc> :noh<return>
 
+" Select all
+nnoremap <C-a> ggv$G$
 
 " Tab key mappings
 nnoremap <C-Left> :tabprevious<CR>
@@ -152,24 +154,24 @@ nnoremap <C-W><C-F> <C-W>vgf
 
 " jq key mappings
 if executable('python')
-  nnoremap jq <ESC>:%!python -m json.tool<CR>
+  xnoremap jq <ESC>:%!python -m json.tool<CR>
 endif
 if executable('python2')
-  nnoremap jq <ESC>:%!python2 -m json.tool<CR>
+  xnoremap jq <ESC>:%!python2 -m json.tool<CR>
 endif
 if executable('python3')
-  nnoremap jq <ESC>:%!python3 -m json.tool<CR>
+  xnoremap jq <ESC>:%!python3 -m json.tool<CR>
 endif
 if executable('jq')
-  nnoremap jq <ESC>:%!jq '.'<CR>
-  nnoremap jc <ESC>:%!jq -c '.'<CR>
+  xnoremap jq <ESC>:%!jq '.'<CR>
+  xnoremap jc <ESC>:%!jq -c '.'<CR>
 endif
 
 " yq key mappings
 " https://github.com/mikefarah/yq/releases
 if executable('yq')
-  nnoremap yq <ESC>:%!yq e -j<CR>
-  nnoremap yc <ESC>:%!yq e -P<CR>
+  xnoremap yq <ESC>:%!yq e -j<CR>
+  xnoremap yc <ESC>:%!yq e -P<CR>
 endif
 
 " Toggle mappings
