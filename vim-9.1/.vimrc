@@ -304,14 +304,14 @@ if executable('yq')
 "  nnoremap yc <ESC>:%!yq e -P '.'<CR> <BAR> :set filetype=json<CR>             " json to yaml
 
 " For yq version 4.18+
-  xnoremap yq <ESC>:%!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>           " yaml and compact json to pretty print json
-  xnoremap yqc <ESC>:%!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>     " yaml and pretty print json to compact json
-  xnoremap yqx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " yaml to xml
-  xnoremap yc <ESC>:%!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>                " json to yaml
-  xnoremap ycx <ESC>:%!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " json to xml
-  xnoremap yxc <ESC>:%!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=json<CR>   " xml to json
-  xnoremap yxq <ESC>:%!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
-  xnoremap yqs <ESC>:%!yq -o=shell '.'<CR>                                      " yaml to shell
+  xnoremap yq <ESC>:'<,'>!yq -o=json '.'<CR> <BAR> :set filetype=json<CR>           " yaml and compact json to pretty print json
+  xnoremap yqc <ESC>:'<,'>!yq -o=json -I=0 '.'<CR> <BAR> :set filetype=json<CR>     " yaml and pretty print json to compact json
+  xnoremap yqx <ESC>:'<,'>!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " yaml to xml
+  xnoremap yc <ESC>:'<,'>!yq -P '.'<CR> <BAR> :set filetype=yaml<CR>                " json to yaml
+  xnoremap ycx <ESC>:'<,'>!yq -o=xml '.'<CR> <BAR> :set filetype=xml<CR>            " json to xml
+  xnoremap yxc <ESC>:'<,'>!yq -p=xml -o=json '.'<CR> <BAR> :set filetype=json<CR>   " xml to json
+  xnoremap yxq <ESC>:'<,'>!yq -p=xml -o=yaml '.'<CR> <BAR> :set filetype=yaml<CR>   " xml to yaml
+  xnoremap yqs <ESC>:'<,'>!yq -o=shell '.'<CR>                                      " yaml to shell
 endif
 
 " base64-encode/decode selection if cmd base64 is available
