@@ -5,7 +5,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 " Lars Bohnsack
-" 2025-06-05
+" 2026-03-10
 
 set nocompatible                                                                " short nocp
 set history=10000                                                               " short hi
@@ -150,14 +150,14 @@ endif
 "autocmd BufWritePost,BufLeave,WinLeave ?* mkview                               " create a view while saving the file
 autocmd BufReadPre ?* silent loadview                                           " load a view while reading the file
 
-set viminfo=%,<1000,s100,'10,/50,:100,h,f0,n~/.vim/viminfo                      " viminfo stores the state of the previous editing session
-"           - ----- ---- --- --- ---- - -- ---------------
-"           | |     |    |   |   |    | |  + viminfo file path
-"           | |     |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
-"           | |     |    |   |   |    + disable 'hlsearch' loading viminfo
-"           | |     |    |   |   + comand line history saved
-"           | |     |    |   + search history saved
-"           | |     |    + files marks saved
+set viminfo=%,<1000,s100,'1000,/50,:100,h,f1,n~/.vim/viminfo                    " viminfo stores the state of the previous editing session
+"           - ----- ---- ----- --- ---- - -- ---------------
+"           | |     |    |     |   |    | |  + viminfo file path
+"           | |     |    |     |   |    | + file marks 0=NOT stored 1=stored
+"           | |     |    |     |   |    + disable 'hlsearch' loading viminfo
+"           | |     |    |     |   + comand line history saved
+"           | |     |    |     + search history saved
+"           | |     |    + files marks saved (incl. changelist and jumplist)
 "           | |     + maximum size of an item in Kbyte
 "           | + lines saved each register
 "           + save/restore buffer list
