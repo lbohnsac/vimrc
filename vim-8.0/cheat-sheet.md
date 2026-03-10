@@ -88,6 +88,15 @@
 |**Close quickfix list window**|**`:cclose`**|also **`:ccl`** works|
 |**Do something in all files in the quickfix**|**`:cdo`**|e.g. **`:cdo s/pattern/replacement/`**|
 
+### Jumplist
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Command&nbsp;&nbsp;&nbsp;|&nbsp;Comment&nbsp;|
+|---|---|---|
+|**Show current jump list**|**`:jumps`**||
+|**jump forward in the list**|**`Ctrl`** **`i`**|also **`Tab`** works|
+|**add the current position to the list**|**`m`** **`'`**||
+|**jump backward in the list**|**`Ctrl`** **`o`**||
+|**wipe jump list**|**`:clearjumps`**||
+
 ### Registers
 > Current file name is always in register %
 
